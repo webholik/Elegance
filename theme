@@ -137,12 +137,6 @@
 				font-family:inherit;
 			}
 			
-			
-			.notes{
-				font-size:17px;
-				font-style:normal;
-			}
-			
 			.meta ul{
 				padding:0px;
 				margin:0px;
@@ -283,12 +277,19 @@
                 float:left;
                 background-color:white;
                 border-radius:5px;
+                font-size: 15px;
              }
+             
+             	#notes ol{
+             		margin-top: 35px;
+             		margin-left: -15px;
+             	}
 			 
 				#notes li{
-					padding:15px;
+					padding:9px;
 					list-style:none;
                     border-top: solid 1px;
+                    margin:0px 34px 0px 0px;
 				}
 
             .disqus_div{
@@ -327,8 +328,19 @@
 			}
 			{CustomCSS}
 		</style>
+		
+		<meta name="google-site-verification" content="Xcu8ZwIXqmsUXKacp02FpuDeHWjvWfiQnBc9XQYk2rQ" />
+        <script type="text/javascript">
+ 			 var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', 'UA-16014210-3']);
+			_gaq.push(['_trackPageview']);
 
-
+ 			(function() {
+    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  			})();
+		</script>
     </head>
     <body>
     	<div id="wrapper">
@@ -502,18 +514,7 @@
 									<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
 								{/block:RebloggedFrom}
 							</div>
-						{/block:Audio}
-
-		
-						{block:PermalinkPage}
-							<div id = "post_footer"> 
-								{block:PostNotes}
-									<div id = "notes">{PostNotes}</div>
-								{/block:PostNotes}
-							</div>
-						{/block:PermalinkPage}
-						
-						
+						{/block:Audio}			
 					
 						<div class="meta">
 							<ul>
@@ -524,6 +525,14 @@
 								{/block:IfDisqusShortname}
 							</ul>
 						</div>
+						
+						{block:PermalinkPage}
+							<div id = "post_footer"> 
+								{block:PostNotes}
+									<div id = "notes">{PostNotes}</div>
+								{/block:PostNotes}
+							</div>
+						{/block:PermalinkPage}
 					</div>
 				{/block:Posts}
 				
@@ -533,7 +542,7 @@
 						{block:Permalink}
 							<div id="disqus_thread"></div>
 							<script type="text/javascript">
-							**
+								/**
 								* var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
 								*/
 								(function() {
@@ -571,7 +580,6 @@
 					</div>
 				{/block:Pagination}	
 			</div>
-			
 			
 			
 			<!--<div id="attribution"> 
