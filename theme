@@ -57,15 +57,6 @@
 					padding:3px;
 					line-height:17px;
 				}
-
-			h1 a{
-				color:inherit;
-			}
-
-				h1 a:hover{
-					color:inherit;
-					text-decoration:none;
-				}
 			
 			/*.content{
 				width:512px;
@@ -110,16 +101,15 @@
 				margin:0px;
 				line-height:30px;
 			}
-				  
+
+			h1 a{
+				color:inherit;
+			}
+
 				h1 a:hover{
+					color:inherit;
 					text-decoration:none;
 				}
-				  
-			.info{
-				font-family:helvetica;
-				font-weight:normal;
-				font-size:1em;
-			}
 
 			.text h2 {
 				font-family:arial, sans-serif;
@@ -142,13 +132,6 @@
 				margin-bottom:10px;
 			}
 
-			.date{
-				font-style:italic;
-				font-size:14px;
-				padding-bottom:2px;
-				font-family:arial;
-			}
-
 			a:visited{
 				color:inherit;
 				font-family:inherit;
@@ -158,15 +141,6 @@
 			.notes{
 				font-size:17px;
 				font-style:normal;
-			}
-
-			.tags{
-				font-size:17px;
-				font-style:normal;
-			}
-			
-			.main{
-				padding:10px;
 			}
 			
 			.meta ul{
@@ -200,28 +174,6 @@
             	         text-decoration:none;
            		 }
 			
-			#smooth{
-				background-color: #807b80;
-				border: 0px none;
-				width: 100%;
-				font-family: helvetica;
-				font-size: 16px;
-				height:25px;
-                border-radius: 20px;
-                box-shadow: inset #4c494c 1px 1px 4px;
-			}
-			
-			input{
-				background-color:#807b80;
-				border:0px;
-				width:90%;
-				margin:3px auto;
-			}
-			
-			input:focus{
-				outline:none;
-			}
-			
 			.media{			
 				position:relative;
 				width : 490px;				
@@ -233,7 +185,9 @@
                 box-shadow: black .9px 1px 6px;
             }
 
-            .photo .container{padding-left:10px;}
+            .photo .container{
+            	padding-left:10px;
+            }
 			
 			.chat_content{
 				background-color:white;
@@ -352,10 +306,6 @@
 			a.read_more{
 				font-weight: bold;
 				font-size: 15px;
-			}
-			
-			#search-input:focus{
-				outline:none;
 			}
 			
 			#header-title:hover{
@@ -548,9 +498,9 @@
 										<p class="caption">{Caption}</p>
 									{/block:Caption}
 								</div>
-{block:RebloggedFrom}
-							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
-						{/block:RebloggedFrom}
+								{block:RebloggedFrom}
+									<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+								{/block:RebloggedFrom}
 							</div>
 						{/block:Audio}
 
