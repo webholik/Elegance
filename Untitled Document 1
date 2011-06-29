@@ -7,7 +7,7 @@
         <meta name="font:Title" content="Arial" />
         <meta name="color:Background" content="#EFEFEF" />
         <meta name="color:Text" content="#000" />
-        <meta name="text:Disqus Shortname" content="" />
+        <meta name="te his new ixt:Disqus Shortname" content="" />
 		<link href="{favicon}" rel="shortcut icon" />
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
 		<style type="text/css" media="screen, projection">
@@ -16,13 +16,13 @@
 			/*---------------  Layout   -------------------*/
 
 			#wrapper{
-				/*margin:40px auto;*/
+				margin-top: 30px;
 				max-width:950px;
 				padding:0 1em;
 				}
 			
 			#body{
-				width:100%;
+				width:700px;
 				float:right;
 				height:inherit;
 			}
@@ -30,6 +30,7 @@
 			#left{
 				width: 200px;
 				float: left;
+                                position: fixed;
 				
 			}
 			
@@ -39,7 +40,8 @@
 			}
 			
 			.post_container{
-				padding-top:60px;
+				padding-bottom:50px;
+                                padding-top: 10px;
 				overflow:hidden;
 			}
 			
@@ -74,6 +76,7 @@
 			#pagination{
 				width:100%
 				float:right;
+                                padding-bottom: 20px;
 			}
 			
 			
@@ -98,19 +101,15 @@
                 color:#069;
             }
 			 
-			#left p{
-				padding:0px;
-				margin:0px;
-			}
-			
+				
 			h1 {
-				font-family: "MyriadPro-BoldCond", "Futura-CondensedMedium", "Impact", sans-serif;
-				font-size:60px;
-				letter-spacing:1.5px;
+				font-family: "Droid Sans";
+				font-size:30px;
+				letter-spacing:;
 				font-weight:bold;
-				padding:0px;
+				padding-bottom:10px;
 				margin:0px;
-				line-height:70px;
+				line-height:30px;
 			}
 				  
 				h1 a:hover{
@@ -234,7 +233,7 @@
 
 
                         .photo .media{ border-radius:4px;
-                                    box-shadow: black .5px .5px 4px; }
+                                    box-shadow: black .9px 1px 6px; }
 			
 			.chat_content{
 				background-color:white;
@@ -273,7 +272,6 @@
 			}
 			
 			.caption{
-				font:16px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 				margin-top:20px;
 				
 			}
@@ -313,6 +311,19 @@
                 position:relative;
                 padding-top:5px; 
             }
+
+            #left p{
+                font-family: 'droid sans', sans-serif;
+                font-size: 16px;
+                margin:10px 0px;
+}
+            #left p a{
+                color: #4B5061;
+}
+             
+            #left p a:hover{
+                text-decoration: none;
+}
 			
 			
 			
@@ -383,7 +394,10 @@
 				{block:Description}
 					<p>  {Description} </p> 
 				{/block:Description}
-				<p> About (Change) </p>
+				{block:AskEnabled}<p><a href="/ask">→ {AskLabel} </a></p>{/block:AskEnabled}
+                                {block:SubmissionsEnabled} <p><a href="/submit">→ {SubmitLabel}</a> <p> {/block:SubmissionsEnabled}
+{block:HasPages} <p> <a href="URL">→ {Label} </a> </p> {/block:HasPages}
+
 			</div>
 			{block:SearchPage}
                 {block:SearchResults}
@@ -405,7 +419,11 @@
 								<div class="content">
 									<p>{Body} </p>
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
+
 						{/block:Text}
 						
 						{block:Link}
@@ -415,7 +433,10 @@
 									{block:Description}
 										<p class="caption"> {Description} </p>
 									{block:Description}
-								</div>						
+								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}						
 							</div>
 						{/block:Link}
 		
@@ -427,6 +448,9 @@
 									</div>
 									<p class = "answer"> {Answer} </p>
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
 						{/block:Answer}
 						
@@ -439,7 +463,10 @@
 									{block:Caption}
 										<p class="caption"> {Caption}</p>
 									{/block:Caption}
-								</div>							
+								</div>	
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}						
 							</div>
 						{/block:Video}
 							
@@ -452,7 +479,10 @@
 									{block:Source}
 										<p class="caption"> - {Source} </p>
 									{/block:Source}
-								</div>		
+								</div>	
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}	
 							</div>
 						{/block:Quote}
 						
@@ -466,6 +496,9 @@
 											<p class="caption"> {Caption}</p>
 										{/block:Caption}
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
 						{/block:Photo}
 						
@@ -479,6 +512,9 @@
 										<p class="caption"> {Caption}</p>
 									{/block:Caption}
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
 						{/block:Photoset}
 						
@@ -494,6 +530,9 @@
 										{/block:Lines}
 									</ul>
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
 						{/block:Chat}
 		
@@ -505,8 +544,12 @@
 										<p class="caption">{Caption}</p>
 									{/block:Caption}
 								</div>
+{block:RebloggedFrom}
+							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
+						{/block:RebloggedFrom}
 							</div>
 						{/block:Audio}
+
 		
 						{block:PermalinkPage}
 							<div id = "post_footer"> 
@@ -516,9 +559,7 @@
 							</div>
 						{/block:PermalinkPage}
 						
-						{block:RebloggedFrom}
-							<p class="reblogged">({lang:Reblogged from ReblogParentName 2})</p>
-						{/block:RebloggedFrom}
+						
 					
 						<div class="meta">
 							<ul>
@@ -562,10 +603,8 @@
 								}());
 						</script> 
 					</div>
-				{/block:IfDisqusShortname}	
-			</div>
-			
-			{block:Pagination}
+				{/block:IfDisqusShortname}
+{block:Pagination}
 				<div id="pagination">
 					{block:PreviousPage}
 						<a href="{PreviousPage}"> &larr; {lang:Previous} </a>
@@ -575,7 +614,10 @@
 						<a href="{NextPage}"> {lang:Next} &rarr; </a>
 					{/block:NextPage}  
 				</div>
-			{/block:Pagination}
+			{/block:Pagination}	
+			</div>
+			
+			
 			
 			<!--<div id="attribution"> 
 				Powered by <a href="http://tumblr.com"> Tumblr </a>. Theme - <a href="http://tumblr.com/theme/28230"> Elegance!</a> by <a href="http://thewebholik.com">Ankit Saini </a>
