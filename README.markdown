@@ -1,3 +1,3 @@
 Elegance!
 ==========
-A simple Tumblr theme that I use on my blog.
+A simple Tumblr theme that I used on my blog.
